@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List & Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌸 To-Do List & Notes 🌸</h1>
+        <div class="button-group">
+            <button id="todoButton" onclick="showTodo()">To-Do List</button>
+            <button id="notesButton" onclick="showNotes()">Notes</button>
+        </div>
+        
+        <div id="todoSection">
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Add a new task">
+                <input type="date" id="taskDate">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="taskList"></ul>
+        </div>
+        
+        <div id="notesSection" style="display:none;">
+            <div class="input-group">
+                <input type="text" id="noteTitle" placeholder="Note title">
+                <textarea id="noteInput" placeholder="Write a new note"></textarea>
+                <button onclick="addNote()">Add</button>
+            </div>
+            <ul id="noteList"></ul>
+        </div>
+    </div>
+
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Edit</h2>
+            <textarea id="editInput"></textarea>
+            <button onclick="saveEdit()">Save</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
